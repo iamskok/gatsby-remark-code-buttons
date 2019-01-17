@@ -1,0 +1,37 @@
+{
+  "name": "gatsby-remark-code-buttons",
+  "version": "0.1.10",
+  "description": "Add buttons to code snippets",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run sass && npm run babel",
+    "sass": "node_modules/node-sass/bin/node-sass src/styles.scss ./styles.css",
+    "babel": "node_modules/@babel/cli/bin/babel.js src --out-dir .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamskok/gatsby-remark-code-buttons.git"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-remark-plugin",
+    "gatsby-transformer-remark",
+    "buttons",
+    "markdown"
+  ],
+  "author": "Vladimir Skok <skok@vova.io> (https://github.com/iamskok)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamskok/gatsby-remark-code-buttons/issues"
+  },
+  "homepage": "https://github.com/iamskok/gatsby-remark-code-buttons#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "node-sass": "^4.11.0"
+  }
+}
