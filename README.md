@@ -4,13 +4,13 @@ Add buttons to code snippets.
 
 [![gatsby-remark-code-button YouTube demo](https://media.giphy.com/media/eEMnpEBTmosYC5kCzp/giphy.gif)](https://www.youtube.com/watch?v=KXuPgSQRwQY "gatsby-remark-code-button YouTube demo")
 
-## :wrench: Install
+## Install
 
 ```bash
 npm install gatsby-remark-code-buttons --save-dev
 ```
 
-## :notebook: How to use
+## How to use
 
 in your `gatsby-config.js`
 
@@ -25,7 +25,7 @@ plugins: [
 ]
 ```
 
-## :bulb: Options
+## Options
 
 ```js
 plugins: [
@@ -59,7 +59,7 @@ plugins: [
 ]
 ```
 
-### :rainbow: Include CSS
+### Include CSS
 
 Now that we've injected the custom button, we need to style it!
 
@@ -76,7 +76,7 @@ To apply custom styles import your stylesheet in your app's root `gatsby-browser
 import './src/styles/custom-code-buttons.scss';
 ```
 
-### :black_nib: Usage in Markdown
+### Usage in Markdown
 
 In your Markdown content
 
@@ -98,4 +98,5 @@ This plugin will parse the Markdown AST, pluck the button, and then "clean" the 
 
 ---
 
-:octocat: Currently, buttons support only click to copy functionality. PRs are welcome.
+Currently, buttons support only click to copy functionality.
+PRs are welcome :octocat:
