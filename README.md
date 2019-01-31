@@ -81,7 +81,7 @@ import './src/styles/custom-code-buttons.scss';
 In your Markdown content
 
 ``````js
-```js:action=copy
+```js
 alert('click to copy 💾');
 ```
 ``````
@@ -95,6 +95,14 @@ This plugin will parse the Markdown AST, pluck the button, and then "clean" the 
   </div>
 </div>
 ```
+
+Don't show button
+
+``````js
+```js:copy=false
+alert('will not be copied 💾');
+```
+``````
 
 ---
 
