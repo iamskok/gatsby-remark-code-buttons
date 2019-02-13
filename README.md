@@ -86,7 +86,8 @@ alert('click to copy 💾');
 ```
 ``````
 
-This plugin will parse the Markdown AST, pluck the button, and then "clean" the code snippet language for further processing. With the default config options this plugin will create the following structure, injecting a custom `div`:
+This plugin will parse the Markdown AST, pluck the button, and then "clean" the code snippet language for further 
+processing. With the default config options this plugin will create the following structure, injecting a custom `div`:
 
 ```js
 <div class="gatsby-code-button-container" onclick="copyToClipboard(`alert('how cool is this');`)">
@@ -99,7 +100,7 @@ This plugin will parse the Markdown AST, pluck the button, and then "clean" the 
 Don't show button
 
 ``````js
-```js:copy=false
+```js:clipboard=false
 alert('will not be copied 💾');
 ```
 ``````
@@ -107,4 +108,3 @@ alert('will not be copied 💾');
 ---
 
 Currently, buttons support only click to copy functionality.
-PRs are welcome :octocat:

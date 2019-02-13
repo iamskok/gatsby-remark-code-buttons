@@ -2,7 +2,7 @@ import visit from 'unist-util-visit';
 import qs from 'query-string';
 
 module.exports = function gatsbyRemarkCodeButtons(
-  {markdownAST},
+  { markdownAST },
   {
     className: customClassName,
     buttonClassName: customButtonClassName,
@@ -13,17 +13,16 @@ module.exports = function gatsbyRemarkCodeButtons(
   }
 ) {
     visit(markdownAST, 'code', (node, index) => {
-      const [language, ...params] = (node.lang || '').split(':');
-      const query = params.join('&');
-      const actions = qs.parse(query);
-      const copy = actions.copy;
+      const [language, params] = (node.lang || '').split(':');
+      const actions = qs.parse(params);
+      const { clipboard } = actions;
 
       if (!language) {
         return;
       }
 
-      if (copy === 'false') {
-        delete actions['copy'];
+      if (clipboard === 'false') {
+        delete actions['clipboard'];
       } else {
         const className = ['gatsby-code-button-container'].concat(customClassName || '').join(' ').trim();
         const buttonClassName = ['gatsby-code-button'].concat(customButtonClassName || '').join(' ').trim();
@@ -42,12 +41,12 @@ module.exports = function gatsbyRemarkCodeButtons(
         };
 
         markdownAST.children.splice(index, 0, buttonNode);
-        actions['copy'] = 'false';
+        actions['clipboard'] = 'false';
     }
 
     let newQuery = '';
-    for (let key in actions) {
-      newQuery += `:${key}=${actions[key]}`;
+    if (Object.keys(actions).length) {
+      newQuery = `:` + Object.keys(actions).map(key => `${key}=${actions[key]}`).join('&');
     }
 
     node.lang = language + newQuery;
