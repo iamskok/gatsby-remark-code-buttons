@@ -37,7 +37,7 @@ module.exports = function gatsbyRemarkCodeButtons(
 
         const buttonNode = {
           type: 'html',
-          value: `<div class="${className}" onclick="copyToClipboard(\`${code}\`)"><div class="${buttonClassName}" ${dataTooltipAttr}>${text}${icon}</div></div>`.trim()
+          value: `<div class="${className}" onClick="copyToClipboard(\`${code}\`)"><div class="${buttonClassName}" ${dataTooltipAttr}>${text}${icon}</div></div>`.trim()
         };
 
         markdownAST.children.splice(index, 0, buttonNode);
