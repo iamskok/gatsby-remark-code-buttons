@@ -2,13 +2,13 @@
 
 Add buttons to code snippets.
 
-[![gatsby-remark-code-button YouTube demo](https://media.giphy.com/media/eEMnpEBTmosYC5kCzp/giphy.gif)](https://www.youtube.com/watch?v=KXuPgSQRwQY "gatsby-remark-code-button YouTube demo")
-
 ## Install
 
 ```bash
 npm install gatsby-remark-code-buttons --save-dev
 ```
+
+![](https://media.giphy.com/media/hoHRea4IdkDBrsE4Bu/source.gif)
 
 ## How to use
 
@@ -117,7 +117,3 @@ Don't show button
 alert('will not be copied 💾');
 ```
 ``````
-
----
-
-Currently, buttons support only click to copy functionality.
