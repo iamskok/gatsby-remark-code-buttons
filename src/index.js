@@ -33,8 +33,9 @@ module.exports = function gatsbyRemarkCodeButtons(
         const iconClassName = ['gatsby-code-button-icon'].concat(customIconClassName || '').join(' ').trim();
         const icon = customIcon || `<svg class="${iconClassName}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>`;
         const tooltip = customTooltip || '';
-        const toaster = ['gatsby-code-button-toaster'].concat(customToasterClassName || '').join(' ').trim();
+        const toasterClassName = ['gatsby-code-button-toaster'].concat(customToasterClassName || '').join(' ').trim();
         const toasterText = (customToasterText ? customToasterText : '').trim();
+        const toasterTextClassName = ['gatsby-code-button-toaster-text'].concat(customToasterTextClassName || '').join(' ').trim();
         const toasterId = (toasterText ? Math.random() * 100 ** 10 : '');
         const toasterDuration = (toasterText ? customToasterDuration : 3500);
 
@@ -50,6 +51,8 @@ module.exports = function gatsbyRemarkCodeButtons(
               data-toaster-text="${toasterText}"
               data-toaster-id="${toasterId}"
               data-toaster-duration="${toasterDuration}"
+              data-toaster-class="${toasterClassName}"
+              data-toaster-text-class="${toasterTextClassName}"
             >
               <div
                 class="${buttonClassName}"

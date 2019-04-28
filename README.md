@@ -51,8 +51,12 @@ plugins: [
             text: `customText`,
             // Optional tooltip text. Defaults to ''.
             tooltip: `customTooltip`,
+            // Optional toaster class name. Defaults to 'gatsby-code-button-toaster'.
+            toasterClassName: `customToasterClassName`,
             // Optional toaster text. Defaults to ''.
             toasterText: 'customToasterText',
+            // Optional toaster text class name. Defaults to 'gatsby-code-button-toaster-text'.
+            toasterTextClassName: `customЕoasterTextClassName`,
             // Optional toaster duration. Defaults to 3500.
             toasterDuration: 5000
           }
@@ -103,10 +107,20 @@ processing. With the default config options this plugin will create the followin
   data-toaster-text=""
   data-toaster-id=""
   data-toaster-duration="5000"
+  data-toaster-class="gatsby-code-button-toaster"
+  data-toaster-text-class="gatsby-code-button-toaster-text"
 >
   <div class="gatsby-code-button" data-tooltip="">
     <svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">...</svg>
   </div>
+</div>
+```
+
+With `toasterText` config option this plugin will create the following structure for the toaster node:
+
+```html
+<div class="gatsby-code-button-toaster">
+  <div class="gatsby-code-button-toaster-text">Copied to clipboard</div>
 </div>
 ```
 

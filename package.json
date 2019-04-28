@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-code-buttons",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Add buttons to code snippets",
   "main": "index.js",
   "scripts": {
