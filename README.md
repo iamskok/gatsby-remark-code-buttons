@@ -50,7 +50,11 @@ plugins: [
             // Optional button text. Defaults to ''.
             text: `customText`,
             // Optional tooltip text. Defaults to ''.
-            tooltip: `customTooltip`
+            tooltip: `customTooltip`,
+            // Optional toaster text. Defaults to ''.
+            toasterText: 'customToasterText',
+            // Optional toaster duration. Defaults to 3500.
+            toasterDuration: 5000
           }
         }
       ]
@@ -67,6 +71,9 @@ Now that we've injected the custom button, we need to style it!
 .gatsby-code-button-container {}
 .gatsby-code-button {}
 .gatsby-code-button-icon {}
+.gatsby-code-button-toaster {}
+.gatsby-code-button-toaster-text {}
+.gatsby-code-button-buffer {}
 ```
 
 To apply custom styles import your stylesheet in your app's root `gatsby-browser.js`.
@@ -89,9 +96,15 @@ alert('click to copy 💾');
 This plugin will parse the Markdown AST, pluck the button, and then "clean" the code snippet language for further 
 processing. With the default config options this plugin will create the following structure, injecting a custom `div`:
 
-```js
-<div class="gatsby-code-button-container" onclick="copyToClipboard(`alert('how cool is this');`)">
-  <div class="gatsby-code-button">
+```html
+<div
+  class="gatsby-code-button-container"
+  onclick="copyToClipboard(`alert('how cool is this');`)"
+  data-toaster-text=""
+  data-toaster-id=""
+  data-toaster-duration="5000"
+>
+  <div class="gatsby-code-button" data-tooltip="">
     <svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">...</svg>
   </div>
 </div>
