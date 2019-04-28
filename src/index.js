@@ -9,7 +9,10 @@ module.exports = function gatsbyRemarkCodeButtons(
     text: customText,
     icon: customIcon,
     iconClassName: customIconClassName,
-    tooltip: customTooltip
+    tooltip: customTooltip,
+    toaster: customToasterClassName,
+    toasterText: customToasterText,
+    toasterDuration: customToasterDuration
   }
 ) {
     visit(markdownAST, 'code', (node, index) => {
@@ -30,14 +33,32 @@ module.exports = function gatsbyRemarkCodeButtons(
         const iconClassName = ['gatsby-code-button-icon'].concat(customIconClassName || '').join(' ').trim();
         const icon = customIcon || `<svg class="${iconClassName}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>`;
         const tooltip = customTooltip || '';
-        const dataTooltipAttr = tooltip ? `data-tooltip="${tooltip}"` : '';
+        const toaster = ['gatsby-code-button-toaster'].concat(customToasterClassName || '').join(' ').trim();
+        const toasterText = (customToasterText ? customToasterText : '').trim();
+        const toasterId = (toasterText ? Math.random() * 100 ** 10 : '');
+        const toasterDuration = (toasterText ? customToasterDuration : 3500);
 
         let code = markdownAST.children[index].value;
         code = code.replace(/"/gm, '&quot;').replace(/`/gm, '\\`');
 
         const buttonNode = {
           type: 'html',
-          value: `<div class="${className}" onClick="copyToClipboard(\`${code}\`)"><div class="${buttonClassName}" ${dataTooltipAttr}>${text}${icon}</div></div>`.trim()
+          value: `
+            <div
+              class="${className}"
+              onClick="copyToClipboard(\`${code}\`, \`${toasterId}\`)"
+              data-toaster-text="${toasterText}"
+              data-toaster-id="${toasterId}"
+              data-toaster-duration="${toasterDuration}"
+            >
+              <div
+                class="${buttonClassName}"
+                data-tooltip="${tooltip}"
+              >
+                ${text}${icon}
+              </div>
+            </div>
+            `.trim()
         };
 
         markdownAST.children.splice(index, 0, buttonNode);

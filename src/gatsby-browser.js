@@ -33,7 +33,6 @@ exports.onClientEntry = () => {
 
     const el = document.createElement('div');
     el.className = 'gatsby-code-button-toaster';
-    el.dataset.duration = 
     el.innerHTML = `
       <div class="gatsby-code-button-toaster-text">
         ${textElem.dataset.toasterText}
