@@ -10,8 +10,9 @@ module.exports = function gatsbyRemarkCodeButtons(
     icon: customIcon,
     iconClassName: customIconClassName,
     tooltip: customTooltip,
-    toaster: customToasterClassName,
+    toasterClassName: customToasterClassName,
     toasterText: customToasterText,
+    toasterTextClassName: customToasterTextClassName,
     toasterDuration: customToasterDuration
   }
 ) {
