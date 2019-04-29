@@ -32,9 +32,9 @@ exports.onClientEntry = () => {
     }
 
     const el = document.createElement('div');
-    el.className = textElem.dataset.toasterClassName;
+    el.className = textElem.dataset.toasterClass;
     el.innerHTML = `
-      <div class="${textElem.dataset.toasterTextClassName}">
+      <div class="${textElem.dataset.toasterTextClass}">
         ${textElem.dataset.toasterText}
       </div>
     `.trim();

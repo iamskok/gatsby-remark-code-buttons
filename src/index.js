@@ -4,15 +4,15 @@ import qs from 'query-string';
 module.exports = function gatsbyRemarkCodeButtons(
   { markdownAST },
   {
-    className: customClassName,
-    buttonClassName: customButtonClassName,
-    text: customText,
-    icon: customIcon,
-    iconClassName: customIconClassName,
-    tooltip: customTooltip,
-    toasterClassName: customToasterClassName,
+    buttonClass: customButtonClass,
+    buttonContainerClass: customButtonContainerClass,
+    buttonText: customButtonText,
+    svgIconClass: customSvgIconClass,
+    svgIcon: customSvgIcon,
+    tooltipText: customTooltipText,
+    toasterClass: customToasterClass,
+    toasterTextClass: customToasterTextClass,
     toasterText: customToasterText,
-    toasterTextClassName: customToasterTextClassName,
     toasterDuration: customToasterDuration
   }
 ) {
@@ -28,17 +28,17 @@ module.exports = function gatsbyRemarkCodeButtons(
       if (clipboard === 'false') {
         delete actions['clipboard'];
       } else {
-        const className = ['gatsby-code-button-container'].concat(customClassName || '').join(' ').trim();
-        const buttonClassName = ['gatsby-code-button'].concat(customButtonClassName || '').join(' ').trim();
-        const text = customText || '';
-        const iconClassName = ['gatsby-code-button-icon'].concat(customIconClassName || '').join(' ').trim();
-        const icon = customIcon || `<svg class="${iconClassName}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>`;
-        const tooltip = customTooltip || '';
-        const toasterClassName = ['gatsby-code-button-toaster'].concat(customToasterClassName || '').join(' ').trim();
+        const buttonClass = ['gatsby-code-button'].concat(customButtonClass || '').join(' ').trim();
+        const buttonContainerClass = ['gatsby-code-button-container'].concat(customButtonContainerClass || '').join(' ').trim();
+        const buttonText = customButtonText || '';
+        const svgIconClass = ['gatsby-code-button-icon'].concat(customSvgIconClass || '').join(' ').trim();
+        const svgIcon = customSvgIcon || `<svg class="${svgIconClass}" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z"/></svg>`;
+        const tooltipText = customTooltipText || '';
+        const toasterClass = ['gatsby-code-button-toaster'].concat(customToasterClass || '').join(' ').trim();
+        const toasterTextClass = ['gatsby-code-button-toaster-text'].concat(customToasterTextClass || '').join(' ').trim();
         const toasterText = (customToasterText ? customToasterText : '').trim();
-        const toasterTextClassName = ['gatsby-code-button-toaster-text'].concat(customToasterTextClassName || '').join(' ').trim();
+        const toasterDuration = (customToasterDuration ? customToasterDuration : 3500);
         const toasterId = (toasterText ? Math.random() * 100 ** 10 : '');
-        const toasterDuration = (toasterText ? customToasterDuration : 3500);
 
         let code = markdownAST.children[index].value;
         code = code.replace(/"/gm, '&quot;').replace(/`/gm, '\\`');
@@ -47,19 +47,19 @@ module.exports = function gatsbyRemarkCodeButtons(
           type: 'html',
           value: `
             <div
-              class="${className}"
-              onClick="copyToClipboard(\`${code}\`, \`${toasterId}\`)"
-              data-toaster-text="${toasterText}"
+              class="${buttonContainerClass}"
               data-toaster-id="${toasterId}"
+              data-toaster-class="${toasterClass}"
+              data-toaster-text-class="${toasterTextClass}"
+              data-toaster-text="${toasterText}"
               data-toaster-duration="${toasterDuration}"
-              data-toaster-class="${toasterClassName}"
-              data-toaster-text-class="${toasterTextClassName}"
+              onClick="copyToClipboard(\`${code}\`, \`${toasterId}\`)"
             >
               <div
-                class="${buttonClassName}"
-                data-tooltip="${tooltip}"
+                class="${buttonClass}"
+                data-tooltip="${tooltipText}"
               >
-                ${text}${icon}
+                ${buttonText}${svgIcon}
               </div>
             </div>
             `.trim()

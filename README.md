@@ -38,25 +38,25 @@ plugins: [
           options: {
             // Optional button container class name. Defaults
             // to 'gatsby-code-button-container'.
-            className: `customClassName`,
+            buttonContainerClass: `customButtonContainerClass`,
             // Optional button class name. Defaults to 'gatsby-code-button'.
-            buttonClassName: `customButtonClassName`,
-            // Optional icon class name. Defaults to 'gatsby-code-button-icon'.
-            iconClassName: `customIconClassName`,
-            // Optional `svg` icon. Defaults to `svg` string and can be
-            // replaced with any other valid `svg`. Append custom classes
-            // right in the `svg` string and skip `iconClassName` option.
-            icon: `customIcon`,
+            buttonClass: `customButtonClass`,
             // Optional button text. Defaults to ''.
-            text: `customText`,
+            buttonText: `customButtonText`,
+            // Optional svg icon class name. Defaults to 'gatsby-code-button-icon'.
+            svgIconClass: `customSvgIconClass`,
+            // Optional svg icon. Defaults to svg string and can be
+            // replaced with any other valid svg. Use custom classes
+            // in the svg string and skip `iconClass` option.
+            svgIcon: `customSvgIcon`,
             // Optional tooltip text. Defaults to ''.
-            tooltip: `customTooltip`,
+            tooltipText: `customTooltipText`,
             // Optional toaster class name. Defaults to 'gatsby-code-button-toaster'.
-            toasterClassName: `customToasterClassName`,
+            toasterClass: `customToasterClass`,
+            // Optional toaster text class name. Defaults to 'gatsby-code-button-toaster-text'.
+            toasterTextClass: `customЕoasterTextClass`,
             // Optional toaster text. Defaults to ''.
             toasterText: 'customToasterText',
-            // Optional toaster text class name. Defaults to 'gatsby-code-button-toaster-text'.
-            toasterTextClassName: `customЕoasterTextClassName`,
             // Optional toaster duration. Defaults to 3500.
             toasterDuration: 5000
           }
@@ -67,7 +67,7 @@ plugins: [
 ]
 ```
 
-### Include CSS
+### Custom styling
 
 Now that we've injected the custom button, we need to style it!
 
@@ -77,10 +77,9 @@ Now that we've injected the custom button, we need to style it!
 .gatsby-code-button-icon {}
 .gatsby-code-button-toaster {}
 .gatsby-code-button-toaster-text {}
-.gatsby-code-button-buffer {}
 ```
 
-To apply custom styles import your stylesheet in your app's root `gatsby-browser.js`.
+To apply custom styles import stylesheet in your app's root `gatsby-browser.js`.
 
 ```js
 // gatsby-browser.js
@@ -103,12 +102,12 @@ processing. With the default config options this plugin will create the followin
 ```html
 <div
   class="gatsby-code-button-container"
-  onclick="copyToClipboard(`alert('how cool is this');`)"
-  data-toaster-text=""
   data-toaster-id=""
-  data-toaster-duration="5000"
   data-toaster-class="gatsby-code-button-toaster"
   data-toaster-text-class="gatsby-code-button-toaster-text"
+  data-toaster-text=""
+  data-toaster-duration="3500"
+  onClick="copyToClipboard(`alert('how cool is this');`)"
 >
   <div class="gatsby-code-button" data-tooltip="">
     <svg class="gatsby-code-button-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">...</svg>
@@ -116,7 +115,7 @@ processing. With the default config options this plugin will create the followin
 </div>
 ```
 
-With `toasterText` config option this plugin will create the following structure for the toaster node:
+With `toasterText` config enabled this plugin will inject a custom toaster node:
 
 ```html
 <div class="gatsby-code-button-toaster">
