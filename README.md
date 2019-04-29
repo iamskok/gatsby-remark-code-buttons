@@ -54,7 +54,7 @@ plugins: [
             // Optional toaster class name. Defaults to 'gatsby-code-button-toaster'.
             toasterClass: `customToasterClass`,
             // Optional toaster text class name. Defaults to 'gatsby-code-button-toaster-text'.
-            toasterTextClass: `customЕoasterTextClass`,
+            toasterTextClass: `customToasterTextClass`,
             // Optional toaster text. Defaults to ''.
             toasterText: 'customToasterText',
             // Optional toaster duration. Defaults to 3500.
