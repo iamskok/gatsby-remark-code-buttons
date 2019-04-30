@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-code-buttons",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Add buttons to code snippets",
   "main": "index.js",
   "scripts": {
@@ -28,13 +28,13 @@
   },
   "homepage": "https://github.com/iamskok/gatsby-remark-code-buttons#readme",
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.2.2",
-    "@babel/preset-env": "^7.3.1",
-    "node-sass": "^4.11.0"
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "node-sass": "^4.12.0"
   },
   "dependencies": {
-    "query-string": "^6.2.0",
+    "query-string": "^6.5.0",
     "unist-util-visit": "^1.4.0"
   }
 }
