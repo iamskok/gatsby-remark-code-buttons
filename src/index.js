@@ -1,5 +1,5 @@
-import visit from 'unist-util-visit';
-import qs from 'query-string';
+const visit = require('unist-util-visit');
+const qs = require('query-string');
 
 module.exports = function gatsbyRemarkCodeButtons(
   { markdownAST },

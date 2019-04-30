@@ -1,4 +1,4 @@
-import './styles.css';
+require('./styles.css');
 
 exports.onClientEntry = () => {
   window.copyToClipboard = (str, toasterId) => {
@@ -11,9 +11,10 @@ exports.onClientEntry = () => {
     range.selectNode(el);
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
-    document.execCommand(`copy`);
 
+    document.execCommand(`copy`);
     document.activeElement.blur();
+
     setTimeout(() => {
       document.getSelection().removeAllRanges();
       document.body.removeChild(el);
@@ -40,6 +41,7 @@ exports.onClientEntry = () => {
     `.trim();
 
     document.body.appendChild(el);
+
     setTimeout(() => {
       document.body.removeChild(el);
     }, textElem.dataset.toasterDuration);
