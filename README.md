@@ -51,9 +51,9 @@ plugins: [
             svgIcon: `customSvgIcon`,
             // Optional tooltip text. Defaults to ''.
             tooltipText: `customTooltipText`,
-            // Optional toaster class name. Defaults to 'gatsby-code-button-toaster'.
+            // Optional toaster class name. Defaults to ''.
             toasterClass: `customToasterClass`,
-            // Optional toaster text class name. Defaults to 'gatsby-code-button-toaster-text'.
+            // Optional toaster text class name. Defaults to ''.
             toasterTextClass: `customToasterTextClass`,
             // Optional toaster text. Defaults to ''.
             toasterText: 'customToasterText',
