@@ -2,7 +2,7 @@ require('./styles.css');
 
 exports.onClientEntry = () => {
   window.copyToClipboard = (str, toasterId) => {
-    const el = document.createElement('div');
+    const el = document.createElement('textarea');
     el.className = 'gatsby-code-button-buffer';
     el.innerHTML = str;
     document.body.appendChild(el);
