@@ -27,7 +27,7 @@
   &[data-tooltip] {
     &:after {
       top: 26px;
-      right: 0;      
+      right: 0;
     }
 
     &:hover,
@@ -35,7 +35,7 @@
       &:after {
         visibility: visible;
         display: block;
-        z-index: 200;    
+        z-index: 200;
       }
     }
   }
