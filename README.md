@@ -3,7 +3,7 @@
 Add buttons to **markdown** code snippets. 
 
 > This plugin doesn't support MDX. Example
-of [MDX copy button](https://github.com/gatsbyjs/gatsby/pull/15834) can be found in this PR.
+of [MDX copy button](https://github.com/gatsbyjs/gatsby/pull/15834).
 ## Install
 
 ```bash
