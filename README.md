@@ -1,7 +1,9 @@
 # gatsby-remark-code-buttons
 
-Add buttons to code snippets.
+Add buttons to **markdown** code snippets. 
 
+> This plugin doesn't support MDX. Example
+of [MDX copy button](https://github.com/gatsbyjs/gatsby/pull/15834) can be found in this PR.
 ## Install
 
 ```bash
