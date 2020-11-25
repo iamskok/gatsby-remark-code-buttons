@@ -31,7 +31,7 @@
     "@babel/cli": "7.10.1",
     "@babel/core": "7.10.2",
     "@babel/preset-env": "7.10.2",
-    "node-sass": "4.14.1"
+    "node-sass": "5.0.0"
   },
   "dependencies": {
     "query-string": "^6.5.0",
