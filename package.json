@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-code-buttons",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Add copy buttons to code snippets",
   "main": "index.js",
   "scripts": {
