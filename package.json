@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-code-buttons",
-  "version": "2.0.5",
+  "version": "2.0.6",
   "description": "Add copy buttons to code snippets",
   "main": "index.js",
   "scripts": {
@@ -28,10 +28,10 @@
   },
   "homepage": "https://github.com/iamskok/gatsby-remark-code-buttons#readme",
   "devDependencies": {
-    "@babel/cli": "7.10.1",
-    "@babel/core": "7.10.2",
-    "@babel/preset-env": "7.10.2",
-    "node-sass": "4.14.1"
+    "@babel/cli": "7.12.17",
+    "@babel/core": "7.12.17",
+    "@babel/preset-env": "7.12.17",
+    "node-sass": "5.0.0"
   },
   "dependencies": {
     "query-string": "^6.5.0",
