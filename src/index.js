@@ -16,7 +16,7 @@ module.exports = function gatsbyRemarkCodeButtons(
     toasterDuration: customToasterDuration
   }
 ) {
-  visit(markdownAST, 'code', (node, index) => {
+  visit(markdownAST, 'code', (node, index, parent) => {
     const [language, params] = (node.lang || '').split(':');
     const actions = qs.parse(params);
     const { clipboard } = actions;
@@ -40,7 +40,7 @@ module.exports = function gatsbyRemarkCodeButtons(
       const toasterDuration = (customToasterDuration ? customToasterDuration : 3500);
       const toasterId = (toasterText ? Math.random() * 100 ** 10 : '');
 
-      let code = markdownAST.children[index].value;
+      let code = parent.children[index].value;
       code = code.replace(/"/gm, '&quot;').replace(/`/gm, '\\`').replace(/\$/gm, '\\$');
 
       const buttonNode = {
@@ -65,7 +65,7 @@ module.exports = function gatsbyRemarkCodeButtons(
             `.trim()
       };
 
-      markdownAST.children.splice(index, 0, buttonNode);
+      parent.children.splice(index, 0, buttonNode);
       actions['clipboard'] = 'false';
     }
 
