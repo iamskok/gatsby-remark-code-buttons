@@ -34,7 +34,7 @@
     "node-sass": "5.0.0"
   },
   "dependencies": {
-    "query-string": "6.14.0",
+    "query-string": "6.14.1",
     "unist-util-visit": "2.0.3"
   }
 }
